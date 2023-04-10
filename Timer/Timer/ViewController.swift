@@ -4,7 +4,7 @@ class ViewController: UIViewController {
     
     var timer: Timer!
     
-    //残りの秒数の変数
+    //残り秒数の変数
     var countdown: Int = 0
 
     @IBOutlet weak var timerLabel: UILabel!

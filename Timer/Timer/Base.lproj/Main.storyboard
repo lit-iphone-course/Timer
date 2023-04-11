@@ -1,24 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lX-3z-zz9">
+                                <rect key="frame" x="16" y="203" width="361" height="71.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhW-bl-98J">
+                                <rect key="frame" x="16" y="418.66666666666669" width="160" height="96.000000000000057"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="LZM-Kk-Ghy"/>
+                                    <constraint firstAttribute="height" constant="96" id="YD3-6w-Uyh"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="30秒">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="select30seconds:" destination="BYZ-38-t0r" eventType="touchUpInside" id="inD-DD-8mE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U26-Re-jAj">
+                                <rect key="frame" x="217" y="418.66666666666669" width="160" height="96.000000000000057"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="hcW-G6-PDM"/>
+                                    <constraint firstAttribute="width" constant="160" id="m48-D8-nHf"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="1分">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="select1minute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rdH-dR-baw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJn-dy-sdY">
+                                <rect key="frame" x="16" y="586.66666666666663" width="160" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="OwK-61-G6z"/>
+                                    <constraint firstAttribute="width" constant="160" id="Xhm-nm-SSF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="5分">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="select5minutes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RWf-nF-Y2L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7B-Np-0hN">
+                                <rect key="frame" x="217" y="586.66666666666663" width="160" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="eXq-7l-cgk"/>
+                                    <constraint firstAttribute="height" constant="96" id="pcJ-KD-hmq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="10分">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="select10minutes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sZd-FY-CSI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OhW-bl-98J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BLt-ld-maf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z7B-Np-0hN" secondAttribute="trailing" constant="16" id="FXm-4G-msm"/>
+                            <constraint firstItem="OhW-bl-98J" firstAttribute="top" secondItem="5lX-3z-zz9" secondAttribute="bottom" constant="144" id="TVU-kJ-AXJ"/>
+                            <constraint firstItem="WJn-dy-sdY" firstAttribute="top" secondItem="OhW-bl-98J" secondAttribute="bottom" constant="72" id="ZKO-4E-iYK"/>
+                            <constraint firstItem="U26-Re-jAj" firstAttribute="top" secondItem="5lX-3z-zz9" secondAttribute="bottom" constant="144" id="aK6-3f-pgv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U26-Re-jAj" secondAttribute="trailing" constant="16" id="aOZ-Hm-wYH"/>
+                            <constraint firstItem="z7B-Np-0hN" firstAttribute="top" secondItem="U26-Re-jAj" secondAttribute="bottom" constant="72" id="dXO-B9-u2E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5lX-3z-zz9" secondAttribute="trailing" constant="16" id="gTl-lZ-Tk8"/>
+                            <constraint firstItem="WJn-dy-sdY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tUj-oW-paA"/>
+                            <constraint firstItem="5lX-3z-zz9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="144" id="uTQ-kh-Z8U"/>
+                            <constraint firstItem="5lX-3z-zz9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="y9L-QF-Mac"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="5lX-3z-zz9" id="tU5-7S-WS0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="135.1145038167939" y="4.9295774647887329"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
